@@ -1,0 +1,130 @@
+.footer{
+    /* background: #212121; */
+    background-color: #f5f5f5;
+    border-top: 1px solid #f5f5f5;
+    margin-top: 25px;
+}
+.top-story{
+   color: #666;
+    margin: 0 auto;
+    text-align: left;
+    padding: 30px;
+    line-height: 1.5;
+}
+.footer-head{
+    color:#565656;
+    font-size: 16px;
+    font-family: 'bold';
+    letter-spacing: normal;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+.footer-text{
+    font-family: 'regular';
+    letter-spacing: normal;
+    line-height: 16px;
+    font-size: 12px;
+}
+.header-section{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 40px 20px 0;
+    column-gap: 12px;
+    background: #212121;
+    grid-auto-flow: row;
+}
+.footer-head-2{
+    margin-bottom: 12px;
+    color: rgb(135, 135, 135);
+    font-size: 14px;
+    letter-spacing: normal;
+    line-height: 16px;
+    font-family: 'regular';
+    margin-bottom: 12px;
+}
+.foot-font{
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: normal;
+    font-family: 'bold';
+    color: #fff;
+    text-decoration: none;
+}
+.footer-column{
+    display: flex;
+    flex-direction: column;
+}
+.foot-font:hover {
+    text-decoration: underline;
+}
+.footer-mar{
+    margin-top: 20px;
+}
+.head-size{
+    font-size: 12px;
+}
+.foot-size{
+    font-size: 12px;
+    font-family:'regular';
+    color: #fff;
+}
+.social-mar{
+    margin-bottom: 16px;
+}
+.footer-social{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.social-img{
+    margin-right: 16px;
+}
+.foot-color{
+    color: #2874f0;
+}
+.footer-end{
+    border-top: 1px solid #454d5e;
+    padding: 25px 0;
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #212121;
+}
+.footer-end-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.background{
+    background: #212121; 
+    overflow: auto;
+    width: 100%;
+}
+.footer-end-font{
+    font-family: 'regular';
+    font-size: 8px;
+    letter-spacing: normal;
+    line-height: 18px;
+    color: rgb(255, 255, 255);
+    margin-left: 4px;
+}
+@media screen and (max-width:768px){
+ .header-section{
+    grid-template-columns: repeat(1,1fr);
+ }   
+ .footer-end{
+    flex-direction: column;
+    align-items: flex-start;
+ }
+ .footer-end-inner{
+    justify-content: flex-start;
+ }
+ .footer-end-font{
+    font-size :14px;
+    margin-top: 8px;
+    margin-bottom:8px;
+    font-family: 'bold';
+ }
+}

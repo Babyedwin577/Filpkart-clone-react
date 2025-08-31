@@ -1,0 +1,296 @@
+*{
+   box-sizing: border-box; 
+}
+.header{
+    padding: 8px 18px;
+    max-width: 480px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+    height: 48px;
+    width: 100%;
+    margin: auto;
+    background:#fff;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.burger-nav{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 12px;
+}
+.filpkart-logo img{
+    padding-top: 2px;
+}
+.filpkart-logo
+{
+    display: flex;
+    align-items: center;
+    margin-left: -56px
+}
+.login{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 12px;
+}
+.fonts{
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: normal;
+    color: rgb(0,0,0);
+    font-family: inter_regular, fallback-inter_regular, Arial, sans-serif;
+}
+.margin{
+    margin-left:4px;
+}
+.searchbar-wrapper{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.location-wrapper{
+    display: flex;
+    align-items: center;
+    padding:0 16px;
+    padding-top: 4px;
+  
+}
+.location-inner{
+    font-size: 12px;
+    font-family: 'semibold';
+    letter-spacing: normal;
+    line-height: 18px;
+    color: rgb(31, 31, 31);
+}
+.color{
+    color: rgb(42, 85, 229);
+}
+.img-fill{
+    color: rgba(0, 0, 0, 0.54);
+}
+.searchInner{
+    width: 100%;
+    padding: 12px 16px;
+    padding-top: 16px;
+}
+.search-bar{
+    border: 1.6px solid #EBEBEB;
+    border-radius: 12px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+}
+.search-bar-inner{
+    display: flex;
+    align-items:stretch;
+    justify-content: center;
+    padding-left: 12px;
+    padding-right: 4px;
+}
+.input{
+    padding-left: 8px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.fonts3{
+    color: rgba(0, 0, 0, 0.88);
+    font-family: 'regular';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: normal;
+}
+.search-icon
+{
+    display: flex;
+}
+.margin-location{
+    margin-left:6px;
+}
+.des-nav-wrapper{
+    display: flex;
+    align-items:center;
+    width: 100%;
+    justify-content: center;
+    background-color: #fff;
+}
+.des-nav-inner{
+   display: flex;
+   max-width: 996px;
+   padding: 12px;
+   width: 100%;
+   padding-top: 13px;
+}
+.desktop-logo{
+    display: flex;
+    width: 100%;
+}
+.desk-filp{
+   margin-right: 36px;
+   margin-top: -2px;
+}
+.desktop-search{
+    display: flex;
+    align-items: center;
+    background-color: #f0f5ff;
+    border-radius: 12px;
+    height: fit-content;
+    min-width: 200px;
+    width: 100%;
+}
+.des-logo{
+    cursor: pointer;
+    padding: 8px 8px 8px 12px;
+    background-color: transparent;
+    border: none;
+    display: flex;
+}
+.des-input{
+    border: 0;
+    outline: 0 none;
+    font-size: 17px;
+    font-family: regular;
+    height: 40px;
+    width: 100%;
+    background-color: transparent;
+    text-overflow: ellipsis;
+    padding: 0;
+}
+.des-height{
+    height: 40px;
+    width: 100%;
+}
+.desk-extra{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.drop{
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+    transition:transform .3s ease-in-out;
+}
+.desk-extra:hover .drop{
+    transform: rotate(180deg);
+}
+.des-mar{
+   margin-right: 8px;
+   margin-left: 0;
+}
+.login-desk{
+    padding: 0 6px 0;
+    position: relative;
+}
+.ForBorder{
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+.login-des{
+   margin-left: 0;
+   margin-right: 8px;
+   padding: 0 6px;
+}
+.login-i{
+    padding: 8px 14px;
+    margin: 0;
+}
+.login-desk:hover .desk-extra{
+    background:  rgb(42, 85, 229);
+}
+.login-desk:hover .fonts{
+    color: #fff;
+}
+.login-desk:hover .drop{
+    filter: brightness(0) invert(1);
+}
+.login-desk:hover .des-mar{
+     filter: brightness(0) invert(1);
+}
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #f0f0f0;
+    min-width: 100px;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, .2);
+    z-index: 100;
+    display: none;
+    border-radius: 8px;
+    width: 280px;
+    left: -60%;
+}
+.dropdown-item
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    align-items: center;
+    width: 100%;
+}
+.drop-span{
+    letter-spacing: normal;
+    color: rgb(0, 0, 0);
+    line-height: 24px;
+    font-family: 'regular';
+    font-size: 16px;
+}
+.drop-span-two{
+    color: rgb(42, 85, 229);
+    letter-spacing: normal;
+    line-height: 24px;
+    font-family: 'semibold';
+    font-size: 16px;
+}
+.drop-border{
+    border: 0;
+    border-bottom: 1px solid rgb(235, 227, 227);
+}
+.dropdown-item img{
+    height: 18px;
+    width: 18px;
+}
+.drop-span-regular{
+    font-size: 14px;
+    line-height: 20px;
+}
+.login-desk:hover .dropdown-menu{
+    display: block;
+}
+.justify-item{
+    justify-content: flex-start;
+    border: none;
+    gap: 8px;
+}
+.justify-item:hover{
+  background: rgba(249, 245, 245, 0.425);
+}
+.info-width{
+    min-width: 210px;
+    left: -500%;
+}
+.info-options{
+    position: relative;
+}
+.info-options:hover .dropdown-menu{
+    display: block;
+}
+
+@media  screen and (min-width:1440px) {
+    .des-nav-inner{
+    padding: 12px 28px;
+    max-width: 100%;
+}
+}

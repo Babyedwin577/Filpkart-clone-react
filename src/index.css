@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'bold';
+  src: url(./fonts/Inter-Bold\ \(1\).woff2);
+}
+@font-face {
+  font-family: 'semibold';
+  src: url(./fonts/Inter-SemiBold\ \(1\).woff2);
+}
+@font-face {
+  font-family: 'regular';
+  src: url(./fonts/Inter-Regular\ \(1\).woff2);
+}

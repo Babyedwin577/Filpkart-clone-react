@@ -1,0 +1,242 @@
+/* Featured */
+.title-wrapper{
+    margin: 0 16px;
+    padding-top: 16px;    
+}
+.featured-font{
+    color:rgb(0,0,0);
+    letter-spacing: -0.01px;
+    line-height: 24px;
+    font-size: 17px;
+    font-family: 'bold';
+}
+.Brand-wrapper{
+    margin: 12px 0;
+}
+.brand-scroll-wrapper{
+    display: flex;
+    align-items: center;
+    padding-right: 4px;
+    padding-left: 16px;
+    overflow: auto;
+    scrollbar-width: none;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    scroll-behavior: smooth;
+}
+.featured-img{
+    display: flex;
+    margin: 0 16px;
+    align-items: center;
+    flex: 0 0 0%;
+}
+.featured-img img{
+    filter: none;
+    opacity: 1;
+    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    width: 328px;
+    height: 295.09px;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 339 / 305;
+    border-radius: 16px;
+}
+
+/* Product */
+
+
+.product-wrapper{
+     align-items: stretch;
+    background-color: rgba(0, 0, 0, 0.00);
+    border: 0 solid black;
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    list-style: none;
+    margin: 0px;
+    min-height: 0px;
+    min-width: 0px;
+    padding: 0px;
+    position: relative;
+    text-decoration: none;
+    z-index: 0;
+    overflow: scroll;
+    scrollbar-width: none;
+    padding-top:12px;
+    padding-left: 8px;
+    padding-bottom: 4px;
+}
+.product-row1{
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    width: max-content;
+}
+.filpkart-minutes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.minutes-backgound{
+    width: 136.23px;
+    height: 58.13px;
+}
+.minutes-backgound img{
+    width: 100%;
+    height: 100%;
+}
+.products-font{
+    font-family: 'semibold';
+    font-size: 10px;
+    margin-top: 6px;
+    color: rgba(33,33,33,1.00);
+    text-align: center;
+    line-height: 14px;
+    font-weight: 400;
+    letter-spacing: normal;
+    white-space: nowrap;
+}
+.product-img{
+    width: 59.81px;
+    height: 59.81px;
+}
+.product-img-wrapper{
+    display: flex;
+    justify-content: center;
+    padding: 0 8px;
+}
+.row2{
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 8px;
+    width: max-content;
+}
+.padding-minutes{
+    padding: 0 8px;
+}
+.ad-wrapper{
+    display: flex;
+    align-items: center;
+    margin: 12px 16px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+.ad-image{
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+/* Sales */
+
+.sales-wrapper{
+    margin:12px 16px;
+    margin-top: 24px;
+    position: relative;
+    height: 224px;
+}
+.sales-img{
+    filter: none;
+    opacity: 1;
+    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    width: 100%;
+    margin: auto;
+    display: block;
+    aspect-ratio: 82 / 33;
+    border-radius: 16px;
+    height: 100%;
+    max-height: 220px;
+}
+.sales-header{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 16px 16px;
+    padding-bottom: 0;
+}
+.fonts-sales{
+    color: rgb(0, 0, 0);
+    font-family: 'bold';
+    font-size: 17px;
+    letter-spacing: normal;
+    line-height: 24px;
+}
+.sale-product{
+    margin-bottom: 12px;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    overflow: auto;
+    z-index: 9999;
+    top: 52px;
+    width: 100%;
+    padding-right: 48px;
+    scrollbar-width: none;
+}
+.sales-img-wrap{
+    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+
+}
+.height{
+    height: 160px;
+    width: 106px;
+}
+
+/* Sponsored */
+
+.sponsored-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+}
+.sponsored-head{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 16px 16px 0;
+}
+.sponsored-head h1{
+    font-family: 'bold';
+    line-height: 24px;
+    letter-spacing: -0.01px;
+    font-size: 17px;
+    margin: 0;
+}
+.sponsored-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 12px 16px;
+    margin-left: 4px;
+}
+.sponsored-img{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 12px;
+    flex: 1 1 33.33333%;
+    max-width: 100%;
+}
+.sponsored-img img{
+    filter: none;
+    opacity: 1;
+    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    width: 100%;
+    margin: auto;
+    display: block;
+    object-fit: contain;
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+}
+
