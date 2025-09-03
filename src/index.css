@@ -24,3 +24,11 @@ code {
   font-family: 'regular';
   src: url(./fonts/Inter-Regular\ \(1\).woff2);
 }
+@font-face {
+  font-family: 'italicregular';
+  src: url(./fonts/Inter-Italic.woff2);
+}
+@font-face {
+  font-family: 'italicsemibold';
+  src: url(./fonts/Inter-SemiBoldItalic.woff2);
+}

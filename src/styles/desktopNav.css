@@ -130,10 +130,13 @@ transform: scale(1) translateY(-3%) rotate(316deg);
   transition: transform 0.3s ease;
 }
 .right-first{
-   font-family: 'bold';
+   font-family: 'semibold';
 }
 .top-change{
     right: 0;
+}
+.dropright-items:hover{
+  font-family: 'semibold';
 }
 @media  screen and (min-width:1440px) {
     .des-scroll-wrapper {

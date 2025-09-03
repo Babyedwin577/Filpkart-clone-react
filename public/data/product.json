@@ -169,6 +169,7 @@
        {
          "id":"60",
          "title":"Men's Top Wears",
+         "category":"Fashion",
          "subOptions":[
             {"id":"61","title":"More in Men's Top wears"},
             {"id":"62","title":"All"},
@@ -186,6 +187,7 @@
        {
          "id":"71",
          "title":"Men's Bottom Wear",
+         "category":"Fashion",
          "subOptions":[
             {"id":"71","title":"More in Men's Bottom wears"},
             {"id":"73","title":"All"},
@@ -203,6 +205,7 @@
       {
          "id":"85",
          "title":"Women Ethnic",
+         "category":"Fashion",
          "subOptions":[
             {"id":"86","title":"More in Women Ethnic"},
             {"id":"87","title":"All"},
@@ -221,6 +224,7 @@
       {
          "id":"98",
          "title":"Men Foowear",
+         "category":"Fashion",
          "subOptions":[
             {"id":"99","title":"More in Men Footwear"},
             {"id":"100","title":"All"},
@@ -236,6 +240,7 @@
        {
          "id":"108",
          "title":"Women Footwear",
+         "category":"Fashion",
          "subOptions":[
             {"id":"109","title":"More in Women FootWear"},
             {"id":"110","title":"All"},
@@ -255,6 +260,7 @@
        {
          
          "title":"Watches and Accessories",
+         "category":"Fashion",
          "subOptions":[
             {"id":"122","title":"More in Watches and Accessories"},
             {"id":"123","title":"Men & Women Watches"},
@@ -270,6 +276,7 @@
        {
          "id":"131",
          "title":"Women Western",
+         "category":"Fashion",
          "subOptions":[
             {"id":"132","title":"More in Women Western"},
             {"id":"133","title":"All"},
@@ -289,6 +296,7 @@
        {
          "id":"145",
          "title":"Bags, Suitcases & Luggage",
+         "category":"Fashion",
          "subOptions":[
             {"id":"146","title":"More in Bags,Suitcases & Luggages"},
             {"id":"147","title":"All"},
@@ -306,6 +314,7 @@
        {
          "id":"157",
          "title":"Kids",
+         "category":"Fashion",
          "subOptions":[
             {"id":"158","title":"More in Kids"},
             {"id":"159","title":"All"},
@@ -325,6 +334,7 @@
        {
          
          "title":"Essentials",
+         "category":"Fashion",
          "subOptions":[
             {"id":"171","title":"More in Essentials"},
             {"id":"172","title":"Men's Briefs & Trunks"},
@@ -341,7 +351,7 @@
          ]
        },
        {
-         
+         "category":"Fashion",
          "title":"Winter",
          "subOptions":[
             {"id":"183","title":"More in Winter"},
@@ -986,17 +996,3 @@
       }
    ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
