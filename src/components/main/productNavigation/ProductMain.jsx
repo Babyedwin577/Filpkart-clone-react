@@ -24,7 +24,7 @@ export const ProductMain = () => {
     console.log(filteredProduct)
   return (
      <div>
-      
+
      </div>
   )
 }

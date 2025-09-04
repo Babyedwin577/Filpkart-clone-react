@@ -15,6 +15,11 @@ const [filters,setFilters]=useState({
   size:[],
   occasion:[],
   collar:[],
+  customerratings:[],
+  discount:[],
+  offers:[],
+  newarrivals:[],
+  availability:[]
 })
   return (
     <div style={{paddingTop:"56px"}}>
