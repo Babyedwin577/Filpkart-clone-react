@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-
+import { useLocation, useParams } from 'react-router-dom'
+import { Explantion } from '../../ui/Explantion'
 export const ProductMain = () => {
     const [productData,setProductData]=useState([])
     const {category,subCategory,subOptions}=useParams()
+    const {pathname}=useLocation()
+    const filteredurl=pathname.split("/").filter(Boolean)
+    const decordurl=filteredurl.map((p)=>decodeURIComponent(p))
+    const secondpart=decordurl[1]
+    console.log(secondpart)
     useEffect(()=>{
         fetch('/data/ProductCard.json')
         .then((data)=>data.json())
@@ -23,8 +28,8 @@ export const ProductMain = () => {
     })
     console.log(filteredProduct)
   return (
-     <div>
-
+     <div style={{background:"#fff", width:"100%", minWidth:"682px"}}>
+        <Explantion secondpart={secondpart}/>
      </div>
   )
 }

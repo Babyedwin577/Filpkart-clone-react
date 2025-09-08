@@ -156,7 +156,8 @@
 }
 
 .min-width-none{
-    min-width: 0;
+    min-width: -webkit-fill-available;
+    min-width: fit-content;
 }
 .GAbRIN1{
     margin: 0 8px;
@@ -169,7 +170,3 @@
     transform: rotate(270deg);
     margin: 1px 0 0 8px;
 }
-
-
-
-

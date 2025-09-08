@@ -34,4 +34,3 @@ export const ProductSection1 = ({objectName, title}) => {
     </div>
   )
 }
-

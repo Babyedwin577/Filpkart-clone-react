@@ -5,7 +5,7 @@ import { ProductPageNav } from '../components/Nav/ProductPageNav'
 import { ProductSideNav } from '../components/Nav/ProductSideNav'
 export const ProductPage = () => {
 const [filters,setFilters]=useState({
-  gender:[],
+  gender:['Men'],
   brand:[],
   color:[],
   fabric:[],

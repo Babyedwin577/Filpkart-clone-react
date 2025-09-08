@@ -1,6 +1,7 @@
 .productNav-wrap{
     width: 100%;
     position: relative;
+    background: #fff;
 }
 .productNav-inner{
     max-width: 1248px;
