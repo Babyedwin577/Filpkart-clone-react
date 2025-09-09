@@ -6,8 +6,86 @@
        "brandName":"Us Polo",
        "productName":"PoloNecked T-shirts",
        "productImage":"",
-       "productPrice":"299",
-       "productRealPrice":"1999",
-       "sizeDetails":"S,M,L"
+       "productPrice":300,
+       "productRealPrice":1999,
+       "sizeDetails":"S,M,L",
+       "popularity":99,
+       "createdAt":"2025-08-30T10:00:00Z"
+    },
+    {
+       "productCategory":"Fashion",
+       "productRightCategory":"Men's Top Wears",
+       "productLeftCategory":"Men's T-shirts",
+       "brandName":"Us Polo",
+       "productName":"PoloNecked T-shirts",
+       "productImage":"",
+       "productPrice":400,
+       "productRealPrice":1999,
+       "sizeDetails":"S,M,L",
+       "popularity":85,
+       "createdAt":"2025-08-30T10:00:00Z"
+    },{
+       "productCategory":"Fashion",
+       "productRightCategory":"Men's Top Wears",
+       "productLeftCategory":"Men's T-shirts",
+       "brandName":"Us Polo",
+       "productName":"PoloNecked T-shirts",
+       "productImage":"",
+       "productPrice":100,
+       "productRealPrice":1999,
+       "sizeDetails":"S,M,L",
+       "popularity":2,
+       "createdAt":"2025-08-30T10:00:00Z"
+    },{
+       "productCategory":"Fashion",
+       "productRightCategory":"Men's Top Wears",
+       "productLeftCategory":"Men's T-shirts",
+       "brandName":"Us Polo",
+       "productName":"PoloNecked T-shirts",
+       "productImage":"",
+       "productPrice":223,
+       "productRealPrice":1999,
+       "sizeDetails":"S,M,L",
+       "popularity":85,
+       "createdAt":"2025-08-30T09:00:00Z"
+    },{
+       "productCategory":"Fashion",
+       "productRightCategory":"Men's Top Wears",
+       "productLeftCategory":"Men's T-shirts",
+       "brandName":"Us Polo",
+       "productName":"PoloNecked T-shirts",
+       "productImage":"",
+       "productPrice":35,
+       "productRealPrice":1999,
+       "sizeDetails":"S,M,L",
+       "popularity":33,
+       "createdAt":"2025-08-30T07:12:00Z"
+    },{
+       "productCategory":"Fashion",
+       "productRightCategory":"Men's Top Wears",
+       "productLeftCategory":"Men's T-shirts",
+       "brandName":"Us Polo",
+       "productName":"PoloNecked T-shirts",
+       "productImage":"",
+       "productPrice":255,
+       "productRealPrice":1999,
+       "sizeDetails":"S,M,L",
+       "popularity":1,
+       "createdAt":"2025-08-30T07:13:00Z"
+    },{
+       "productCategory":"Fashion",
+       "productRightCategory":"Men's Top Wears",
+       "productLeftCategory":"Men's T-shirts",
+       "brandName":"Us Polo",
+       "productName":"PoloNecked T-shirts",
+       "productImage":"",
+       "productPrice":9999,
+       "productRealPrice":1999,
+       "sizeDetails":"S,M,L",
+       "popularity":100,
+       "createdAt":"2025-08-30T10:00:00Z"
     }
 ]
+
+
+

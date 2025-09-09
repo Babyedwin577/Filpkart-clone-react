@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../../styles/explanation.css'
-export const Explantion = ({secondpart}) => {
+export const Explantion = ({secondpart,sortType,setSortType}) => {
   return (
-    <div><div className='explanation-wrap'>
+    <div>
+        <div className='explanation-wrap'>
             <div className='path'>
                 <div className='pathlist-wrap'>
                     <Link to="/" className="homenav">Home</Link>
@@ -22,9 +23,30 @@ export const Explantion = ({secondpart}) => {
             </div>
             <h1 className='topwear-head'>Topwear</h1>
             <p className='noofproducts'>(Showing 1 – 40 products of 14,507 products)</p>
+            <div className='sortoptions'>
+                <span className="sort-head">Sort By</span>
+                <div
+                 className={`sort-items ${sortType==="popularity"?'sortingActive':""}`}
+                 onClick={()=>{
+                    setSortType("popularity")
+                }}>Popularity</div>
+                <div
+                 className={`sort-items ${sortType==="lowTohigh"?'sortingActive':""}`}
+                 onClick={()=>{
+                    setSortType("lowTohigh")
+                }}>Price -- Low to High</div>
+                <div
+                 className={`sort-items ${sortType==="highTolow"?'sortingActive':""}`}
+                 onClick={()=>{
+                    setSortType("highTolow")
+                }}>Price -- High to Low</div>
+                <div
+                 className={`sort-items ${sortType==="newest"?'sortingActive':""}`}
+                 onClick={()=>{
+                    setSortType("newest")
+                }}>Newest First</div>
+            </div>
         </div>
-        </div>
+    </div>
   )
 }
-
-

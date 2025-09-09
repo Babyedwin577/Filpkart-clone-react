@@ -74,20 +74,34 @@ p{
     font-weight: 500;
     line-height: 1.4;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.sortoptions{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+.sort-head{
+    padding: 8px 10px 4px 0;
+    font-weight: 500;
+    font-family: 'bold';
+    font-size: 13.5px;
+    color: #000;
+    line-height: 19.6px;
+    letter-spacing: normal;
+}
+.sort-items{
+    padding: 8px 0 4px;
+    border-bottom: 2px solid transparent;
+    margin: 0 10px;
+    color: rgb(33, 33, 33);
+    line-height: 19.6px;
+    font-family: 'regular';
+    font-weight: 500;
+    letter-spacing: normal;
+    font-size: 14px;
+    cursor: pointer;
+}
+.sortingActive{
+    border-color: #2874f0;
+    color: #2874f0;
+}
