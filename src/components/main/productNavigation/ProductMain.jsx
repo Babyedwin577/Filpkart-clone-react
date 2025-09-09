@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation, useParams } from 'react-router-dom'
+import { ProductCardLargeScreen } from '../../ui/ProductCardLargeScreen'
 import { Explantion } from '../../ui/Explantion'
-export const ProductMain = () => {
+import './productMain.css'
+export const ProductMain = ({filters}) => {
     const [productData,setProductData]=useState([])
     const [sortType,setSortType]=useState('popularity')
     const {category,subCategory,subOptions}=useParams()
@@ -21,13 +23,21 @@ export const ProductMain = () => {
     console.log(subCategory)
     console.log(subOptions)
     const filteredProduct=productData.filter((product)=>{
-        return(
-            product.productCategory.toLowerCase()===category?.toLowerCase()&&
-            (!subCategory||product.productRightCategory.toLowerCase()===subCategory?.toLowerCase())&&
-            (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
-        )
+        return Object.entries(filters).every(([key,values])=>{
+            if(values.length===0) return true
+             const productKeyForFilter={
+                   gender:'gender',
+                   brand:"brandName",
+                   color:"color",
+                   fabric:"fabric"
+             }
+             const productKey=product[productKeyForFilter[key]]
+             return values.includes(productKey)
+        })&&
+        product.productCategory.toLowerCase()===category?.toLowerCase()&&
+        (!subCategory||product.productRightCategory.toLowerCase()===subCategory?.toLowerCase())&&
+        (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
     })
-    console.log(filteredProduct)
     const sortProducts=[...filteredProduct].sort((a,b)=>{
         switch(sortType){
             case "popularity":
@@ -49,16 +59,32 @@ export const ProductMain = () => {
         sortType={sortType}
         setSortType={setSortType}
         />
+        <div className='product-wrapping'>
         {
             sortProducts.map((item,index)=>(
-                <div key={index} style={{display:"flex",gap:"10px"}}>
-                    <div>{item.name}</div>
-                    <div>{item.popularity}</div>
-                    <div>{item.productPrice}</div>
-                    <div>{item.createdAt}</div>
-                </div>
+                <ProductCardLargeScreen
+                key={index}
+                item={item}
+                />
             ))
         }
+        </div>
      </div>
   )
 }
+
+
+//    const filteredProduct=productData.filter((product)=>{
+//         return(
+//             product.productCategory.toLowerCase()===category?.toLowerCase()&&
+//             (!subCategory||product.productRightCategory.toLowerCase()===subCategory?.toLowerCase())&&
+//             (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
+//         )
+//     })
+
+
+
+
+
+
+

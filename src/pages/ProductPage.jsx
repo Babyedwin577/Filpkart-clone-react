@@ -31,7 +31,9 @@ const [filters,setFilters]=useState({
          filters={filters}
          setFilters={setFilters}
         />
-        <ProductMain/>
+        <ProductMain
+         filters={filters}
+        />
       </div>
     </div>
   )
