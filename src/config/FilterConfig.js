@@ -17,7 +17,7 @@ const filterOptions=[
     {
         key:"fabric",
         title:"FABRIC",
-        options:["Pure Cotton","Cotten Blend","Polyester","Polycotton","Viscose Rayon","Cotton Linen","7","8","9",'10','11','12','13','14','15','16']
+        options:["Pure Cotton","Modal","Cotten Blend","Polyester","Polycotton","Viscose Rayon","Cotton Linen","7","8","9",'10','11','12','13','14','15','16']
     },
     {
         key:"type",

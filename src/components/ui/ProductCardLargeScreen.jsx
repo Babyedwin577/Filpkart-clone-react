@@ -50,10 +50,19 @@ export const ProductCardLargeScreen = ({item}) => {
                     <div className='offer-percentage-wrap'>{`${discountPercent}% off`}</div>
                 </div>
                 <div className='specialNotation-wrap'>
-                {
+                { 
                     item.specialNotation===true?(
-                         <div className={`specialNotationDes ${item.specialNotationDes==="Big Billion Days Price"?"":"differ-back"}`}>
-                            <span className={`specialNotationDesfont ${item.specialNotationDes==="Big Billion Days Price"?"":"differ-font"}`}>{item.specialNotationDes}</span>
+                         <div
+                           className={`specialNotationDes 
+                             ${item.specialNotationDes === "Big Billion Days Price" ? "" : "differ-back"} 
+                             ${typeof item.specialNotationDes === "string" && item.specialNotationDes.toLowerCase().includes("only") ? "only-style" : ""} 
+                             ${typeof item.specialNotationDes === "string" && item.specialNotationDes.toLowerCase().includes("%") ? "percentage-style" : ""}
+                         `}>
+                            <span 
+                            className={`specialNotationDesfont 
+                            ${item.specialNotationDes==="Big Billion Days Price"?"":"differ-font"}
+                            ${typeof item.specialNotationDes === "string" && item.specialNotationDes.toLowerCase().includes("only") ? "only-style" : ""} 
+                            `}>{item.specialNotationDes}</span>
                          </div>
                     ):null
                 }

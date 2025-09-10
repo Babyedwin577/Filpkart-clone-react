@@ -3,6 +3,7 @@ import { ProductMain } from '../components/main/productNavigation/ProductMain'
 import { ProductPageHeader } from '../components/header/ProductPageHeader'
 import { ProductPageNav } from '../components/Nav/ProductPageNav'
 import { ProductSideNav } from '../components/Nav/ProductSideNav'
+import { Footer } from '../components/footer/Footer'
 export const ProductPage = () => {
 const [filters,setFilters]=useState({
   gender:['Men'],
@@ -35,6 +36,7 @@ const [filters,setFilters]=useState({
          filters={filters}
         />
       </div>
+     <Footer/>
     </div>
   )
 }

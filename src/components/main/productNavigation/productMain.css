@@ -5,3 +5,81 @@
     background:#fff;
     flex-wrap: wrap;
 }
+.TotalPage-wrap{
+    background: #fff;
+    z-index: 4;
+    align-items: center;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    line-height: 32px;
+    position: relative;
+}
+.TotalPage-wrap span{
+    font-size: 14px;
+    color: #212121;
+    font-weight: 400;
+    font-family: 'regular';
+}
+.page-numberWrap{
+    padding: 4px 0;
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+}
+.pages{
+    display: inline-block;
+    padding: 0 8px;
+    cursor: pointer;
+    line-height: 32px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: #2874f0;
+    color: #fff;
+    font-family: 'semibold';
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+}
+.pagesnot{
+    background: transparent;
+    color: #212121;
+}
+.page-numberWrap div{
+    display: inline-block;
+    line-height: 32px;
+    color: #2874f0;
+    padding: 0 25px;
+    text-transform: uppercase;
+    font-family: 'semibold';
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.suggestion-wrap{
+    padding: 16px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+.suggestion-wrap span{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'bold';
+    color: #212121;
+}
+.yes{
+    border-radius: 2px;
+    border: 1px solid #dfdfdf;
+    padding: 6px 28px;
+    font-weight: 500;
+    font-family: 'semibold';
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 24px;
+    display: inline-block;
+}
+.no{
+    margin-left: 8px;
+}

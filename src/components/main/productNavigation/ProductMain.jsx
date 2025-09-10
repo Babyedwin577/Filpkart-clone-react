@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useLocation, useParams } from 'react-router-dom'
+import { useLocation, useParams,Link} from 'react-router-dom'
 import { ProductCardLargeScreen } from '../../ui/ProductCardLargeScreen'
 import { Explantion } from '../../ui/Explantion'
 import './productMain.css'
@@ -53,6 +53,7 @@ export const ProductMain = ({filters}) => {
         }
     })
   return (
+    <div>
      <div style={{background:"#fff", width:"100%", minWidth:"682px"}}>
         <Explantion 
         secondpart={secondpart}
@@ -70,6 +71,28 @@ export const ProductMain = ({filters}) => {
         }
         </div>
      </div>
+     <div className='TotalPage-wrap'>
+        <span>Page 1 of 544</span>
+        <div className='page-numberWrap'>
+            <Link to="/" className='pages'>1</Link>
+            <Link to="/" className='pages pagesnot'>2</Link>
+            <Link to="/" className='pages  pagesnot'>3</Link>
+            <Link to="/" className='pages  pagesnot'>4</Link>
+            <Link to="/" className='pages  pagesnot'>5</Link>
+            <Link to="/" className='pages  pagesnot'>6</Link>
+            <Link to="/" className='pages  pagesnot'>7</Link>
+            <Link to="/" className='pages  pagesnot'>8</Link>
+            <Link to="/" className='pages  pagesnot'>9</Link>
+            <Link to="/" className='pages  pagesnot'>10</Link>
+            <div>next</div>
+        </div>
+     </div>
+     <div className='suggestion-wrap'>
+        <span>Did you find what you were looking for?</span>
+        <div className='yes'>Yes</div>
+        <div className='yes no'>No</div>
+     </div>
+     </div>
   )
 }
 
@@ -81,10 +104,3 @@ export const ProductMain = ({filters}) => {
 //             (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
 //         )
 //     })
-
-
-
-
-
-
-
