@@ -142,6 +142,8 @@
 }
 .differ-back{
     background-color: rgb(231,248,236);
+    max-width: 100%;
+    overflow: hidden;
 }
 .specialNotationDesfont{
     color: rgb(82, 9, 219);

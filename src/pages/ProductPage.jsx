@@ -4,6 +4,7 @@ import { ProductPageHeader } from '../components/header/ProductPageHeader'
 import { ProductPageNav } from '../components/Nav/ProductPageNav'
 import { ProductSideNav } from '../components/Nav/ProductSideNav'
 import { Footer } from '../components/footer/Footer'
+import { UseIfMobile } from '../hooks/UseIfMobile'
 export const ProductPage = () => {
 const [filters,setFilters]=useState({
   gender:['Men'],
@@ -20,10 +21,20 @@ const [filters,setFilters]=useState({
   discount:[],
   offers:[],
   newarrivals:[],
-  availability:[]
+  availability:[],
+  priceMin:0,
+  priceMax:Infinity,
 })
+const isMobile=UseIfMobile()
   return (
-    <div style={{paddingTop:"56px"}}>
+    isMobile?(
+      <>
+        <ProductMain
+            filters={filters}
+        />
+      </>
+    ):(
+      <div style={{paddingTop:"56px"}}>
       <ProductPageHeader/>
       <ProductPageNav/>
 
@@ -38,5 +49,10 @@ const [filters,setFilters]=useState({
       </div>
      <Footer/>
     </div>
+    )
   )
 }
+
+
+
+

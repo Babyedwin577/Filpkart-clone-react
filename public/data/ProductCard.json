@@ -208,7 +208,8 @@
        "assured":true,
        "specialNotation":true,
        "specialNotationDes":"Lowest price in the year",
-       "sizeDetails":"S,M,L,XL"
+       "sizeDetails":"S,M,L,XL",
+       "bestseller":"Bestseller"
 
     },{
        "productCategory":"Fashion",
@@ -219,7 +220,7 @@
        "productImage":"https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/7/v/f/m-shirtsolreg-01-white-urbano-fashion-original-imah92ykpyuphw4u.jpeg?q=70",
        "productPrice":651,
        "productRealPrice":1599,
-       "popularity":90,
+       "popularity":900,
        "createdAt":"2025-08-30T07:13:00Z",
        "gender":"Men",
        "color":"White",
@@ -228,7 +229,8 @@
        "sponsored":true,
        "specialNotation":true,
        "specialNotationDes":"Buy 2 items,save extra 5%",
-       "sizeDetails":"S,M,L,XL"
+       "sizeDetails":"S,M,L,XL",
+       "bestseller":"Bestseller"
 
     },{
        "productCategory":"Fashion",
@@ -339,7 +341,8 @@
        "sponsored":true,
        "specialNotation":true,
        "specialNotationDes":"Hot Deal",
-       "sizeDetails":"S,M,L,XL"
+       "sizeDetails":"S,M,L,XL",
+       "bestseller":"Bestseller"
 
     },{
        "productCategory":"Fashion",
@@ -414,7 +417,8 @@
        "fabric":"Modal",
        "specialNotation":true,
        "specialNotationDes":"Big Billion Days Price",
-       "assured":true
+       "assured":true,
+       "bestseller":"Bestseller"
     },{
        "productCategory":"Fashion",
        "productRightCategory":"Men's Top Wears",
@@ -620,7 +624,8 @@
        "assured":true,
        "specialNotation":true,
        "specialNotationDes":"Big Billion Days Price",
-       "sizeDetails":"XL,S,M,L"
+       "sizeDetails":"XL,S,M,L",
+       "bestseller":"Bestseller"
     },{
        "productCategory":"Fashion",
        "productRightCategory":"Men's Top Wears",
@@ -712,7 +717,8 @@
        "assured":true,
        "specialNotation":true,
        "specialNotationDes":"Hot Deal",
-       "sizeDetails":"S,M,L,XL"
+       "sizeDetails":"S,M,L,XL",
+       "bestseller":"Bestseller"
 
     },{
        "productCategory":"Fashion",

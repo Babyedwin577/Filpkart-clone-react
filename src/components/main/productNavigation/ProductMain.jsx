@@ -2,16 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, useParams,Link} from 'react-router-dom'
 import { ProductCardLargeScreen } from '../../ui/ProductCardLargeScreen'
 import { Explantion } from '../../ui/Explantion'
+import {UseIfMobile} from '../../../hooks/UseIfMobile'
+import { ProductPageHeaderSScreen } from '../../header/ProductPageHeaderSScreen'
 import './productMain.css'
 export const ProductMain = ({filters}) => {
     const [productData,setProductData]=useState([])
     const [sortType,setSortType]=useState('popularity')
+    const isMobile=UseIfMobile()
     const {category,subCategory,subOptions}=useParams()
     const {pathname}=useLocation()
     const filteredurl=pathname.split("/").filter(Boolean)
     const decordurl=filteredurl.map((p)=>decodeURIComponent(p))
     const secondpart=decordurl[1]
     console.log(secondpart)
+    console.log(isMobile)
     useEffect(()=>{
         fetch('/data/ProductCard.json')
         .then((data)=>data.json())
@@ -22,21 +26,45 @@ export const ProductMain = ({filters}) => {
     console.log(category)
     console.log(subCategory)
     console.log(subOptions)
+    // const filteredProduct=productData.filter((product)=>{
+    //     return Object.entries(filters).every(([key,values])=>{
+    //         if(values.length===0) return true
+    //          const productKeyForFilter={
+    //                gender:'gender',
+    //                brand:"brandName",
+    //                color:"color",
+    //                fabric:"fabric"
+    //          }
+    //          const productKey=product[productKeyForFilter[key]]
+    //          return values.includes(productKey)
+    //     })&&
+    //     product.productCategory.toLowerCase()===category?.toLowerCase()&&
+    //     (!subCategory||product.productRightCategory.toLowerCase()===subCategory?.toLowerCase())&&
+    //     (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
+    // })
     const filteredProduct=productData.filter((product)=>{
-        return Object.entries(filters).every(([key,values])=>{
-            if(values.length===0) return true
-             const productKeyForFilter={
-                   gender:'gender',
-                   brand:"brandName",
-                   color:"color",
-                   fabric:"fabric"
-             }
-             const productKey=product[productKeyForFilter[key]]
-             return values.includes(productKey)
-        })&&
-        product.productCategory.toLowerCase()===category?.toLowerCase()&&
-        (!subCategory||product.productRightCategory.toLowerCase()===subCategory?.toLowerCase())&&
-        (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
+          return (
+            Object.entries(filters).every(([key,values])=>{
+                if (Array.isArray(values) && values.length === 0) return true;
+                if (key==="priceMin"||key==="priceMax") return true
+                const productKeyForFilter={
+                    gender:"gender",
+                    brand:"brandName",
+                    color:"color",
+                    fabric:"fabric"
+                }
+                const productKey=product[productKeyForFilter[key]]
+                return Array.isArray(values)?values.includes(productKey):true
+            })&&
+             product.productPrice>=filters.priceMin&&
+             product.productPrice<=filters.priceMax&&
+            product.productCategory.toLowerCase() === category?.toLowerCase() &&
+            (!subCategory ||
+            product.productRightCategory.toLowerCase() === subCategory?.toLowerCase()) &&
+            (!subOptions ||
+            subOptions.toLowerCase() === "all" ||
+            product.productLeftCategory.toLowerCase() === subOptions?.toLowerCase())
+            )
     })
     const sortProducts=[...filteredProduct].sort((a,b)=>{
         switch(sortType){
@@ -52,17 +80,24 @@ export const ProductMain = ({filters}) => {
                 return 0
         }
     })
+    const totolproduct=sortProducts.length
   return (
-    <div>
+    isMobile?(
+        <>
+           <ProductPageHeaderSScreen/>
+        </>
+    ):(
+       <div>
      <div style={{background:"#fff", width:"100%", minWidth:"682px"}}>
         <Explantion 
         secondpart={secondpart}
         sortType={sortType}
         setSortType={setSortType}
+        total={totolproduct}
         />
         <div className='product-wrapping'>
         {
-            sortProducts.map((item,index)=>(
+            sortProducts.slice(0,40).map((item,index)=>(
                 <ProductCardLargeScreen
                 key={index}
                 item={item}
@@ -93,6 +128,8 @@ export const ProductMain = ({filters}) => {
         <div className='yes no'>No</div>
      </div>
      </div>
+    )
+    
   )
 }
 
@@ -104,3 +141,85 @@ export const ProductMain = ({filters}) => {
 //             (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
 //         )
 //     })
+
+
+
+
+
+
+
+
+
+
+
+
+// const filteredProduct = productData.filter((product) => {
+//   return (
+//     Object.entries(filters).every(([key, values]) => {
+//       // Skip empty arrays
+//       if (Array.isArray(values) && values.length === 0) return true;
+
+//       // Skip price keys (handled separately below)
+//       if (key === "priceMin" || key === "priceMax") return true;
+
+//       const productKeyForFilter = {
+//         gender: "gender",
+//         brand: "brandName",
+//         color: "color",
+//         fabric: "fabric",
+//       };
+
+//       const productKey = product[productKeyForFilter[key]];
+//       return Array.isArray(values) ? values.includes(productKey) : true;
+//     }) &&
+//     product.productPrice >= filters.priceMin &&
+//     product.productPrice <= filters.priceMax
+//   );
+// });
+
+
+
+
+
+
+
+
+
+
+// const filteredProduct = productData.filter((product) => {
+//   return (
+//     // 1. Dynamic filters (gender, brand, color, fabric, etc.)
+//     Object.entries(filters).every(([key, values]) => {
+//       // Handle arrays like gender/brand/color/fabric
+//       if (Array.isArray(values)) {
+//         if (values.length === 0) return true; // no filter applied
+//         const productKeyForFilter = {
+//           gender: "gender",
+//           brand: "brandName",
+//           color: "color",
+//           fabric: "fabric",
+//         };
+//         const productKey = product[productKeyForFilter[key]];
+//         return values.includes(productKey);
+//       }
+
+//       // Skip price keys here (handled separately)
+//       if (key === "priceMin" || key === "priceMax") return true;
+
+//       // For non-array filters, just skip
+//       return true;
+//     }) &&
+
+//     // 2. Price filtering
+//     product.productPrice >= filters.priceMin &&
+//     product.productPrice <= filters.priceMax &&
+
+//     // 3. Category checks
+//     product.productCategory.toLowerCase() === category?.toLowerCase() &&
+//     (!subCategory ||
+//       product.productRightCategory.toLowerCase() === subCategory?.toLowerCase()) &&
+//     (!subOptions ||
+//       subOptions.toLowerCase() === "all" ||
+//       product.productLeftCategory.toLowerCase() === subOptions?.toLowerCase())
+//   );
+// });

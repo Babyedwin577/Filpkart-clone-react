@@ -5,10 +5,6 @@ import '../../styles/sidenav.css'
 
 export const ProductSideNav = ({filters,setFilters}) => {
 const [expandedCategories,setExpandedCategories]=useState({})
-const [searchQurey,setSearchQurey]=useState(({
-  brand:'',
-  color:''
-}))
 const toggleCategory=(key)=>{
   setExpandedCategories((prev)=>({
     ...prev,
@@ -30,8 +26,16 @@ const handleChange=(key,option)=>{
 }
   const clearAll = () => {
     const cleared = Object.keys(filters).reduce((acc, key) => {
-      acc[key] = [];
-      return acc;
+      if(key==='priceMin'){
+        acc[key]=0
+      }
+      else if(key==='priceMax'){
+        acc[key]=Infinity
+      }
+      else {
+        acc[key]=[]
+      }
+      return acc
     }, {});
     setFilters(cleared);
   };
@@ -89,7 +93,10 @@ console.log(filters)
               <>
               {
                       index===10&&(
-                        <PriceSection/>
+                        <PriceSection
+                         filters={filters}
+                         setFilters={setFilters}
+                        />
                       )
                     }
               <div className='sidenav-options-wrap' key={index}>

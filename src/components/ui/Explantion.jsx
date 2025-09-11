@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../../styles/explanation.css'
-export const Explantion = ({secondpart,sortType,setSortType}) => {
+export const Explantion = ({secondpart,sortType,setSortType,total}) => {
   return (
     <div>
         <div className='explanation-wrap'>
@@ -22,7 +22,7 @@ export const Explantion = ({secondpart,sortType,setSortType}) => {
                 <p>If you want to stay on top of the fashion trends, then you need to shop for the latest and trendiest <b>topwear</b>  from an e-commerce site Flipkart. Check out the amazing collection of topwear for women online and select the ones that suit you the best. Browse through stylish women’s topwear that are offered by popular brands, such as Only, Jockey, U&F, Darzi, Ann Springs, and more. Women can style a trendy <a href="https://www.flipkart.com/womens-tops/pr?sid=clo%2Cash%2Cohw%2C36j">tops</a> with jeggings and sandals to nail the perfect casual look. Try pairing <a href="https://www.flipkart.com/womens-tops/pr?sid=clo%2Cash%2Cohw%2C36j">crop tops</a> with <a href="https://www.flipkart.com/womens-tops/pr?sid=clo%2Cash%2Cohw%2C36j">denim shorts</a>  for the perfect summer look. Also, check out trendy topwear for men online that are sold by brands, such as Allen Solly, Wildcraft, FastColors, Smartees, Adidas, and more. Men can pair polo <a href="https://www.flipkart.com/womens-tops/pr?sid=clo%2Cash%2Cohw%2C36j">shirts</a> & <a href="https://www.flipkart.com/womens-tops/pr?sid=clo%2Cash%2Cohw%2C36j">chinos</a>  and loafers for the perfect brunch or picnic look. To nail the perfect office look, men can pair formal shirts with trousers and formal shoes to look dapper and stylish. You can also buy trendy and fashionable topwear for kids from your favorite online shopping site. From T-shirts and tops to shirts and frocks, you can find fashionable and comfortable clothes online for your little ones. The information you are reading has been last updated on 08-Sep-25.</p>
             </div>
             <h1 className='topwear-head'>Topwear</h1>
-            <p className='noofproducts'>(Showing 1 – 40 products of 14,507 products)</p>
+            <p className='noofproducts'>(Showing 1 – {total} products of {total} products)</p>
             <div className='sortoptions'>
                 <span className="sort-head">Sort By</span>
                 <div
