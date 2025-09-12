@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState,useMemo } from 'react'
 import { useLocation, useParams,Link} from 'react-router-dom'
 import { ProductCardLargeScreen } from '../../ui/ProductCardLargeScreen'
 import { Explantion } from '../../ui/Explantion'
 import {UseIfMobile} from '../../../hooks/UseIfMobile'
 import { ProductPageHeaderSScreen } from '../../header/ProductPageHeaderSScreen'
+import { FullScreenNav } from '../../Nav/FullScreenNav'
 import './productMain.css'
-export const ProductMain = ({filters}) => {
-    const [productData,setProductData]=useState([])
+export const ProductMain = ({filters,setFilters,productData}) => {
     const [sortType,setSortType]=useState('popularity')
+    const[filterToggle,setFilterToggle]=useState(false)
+    const[sortToggle,setSortToggle]=useState(false)
     const isMobile=UseIfMobile()
     const {category,subCategory,subOptions}=useParams()
     const {pathname}=useLocation()
@@ -16,33 +18,35 @@ export const ProductMain = ({filters}) => {
     const secondpart=decordurl[1]
     console.log(secondpart)
     console.log(isMobile)
-    useEffect(()=>{
-        fetch('/data/ProductCard.json')
-        .then((data)=>data.json())
-        .then((data)=>setProductData(data))
-        .catch((err)=>console.error(`Error Fetching JSON:`,err))
-    },[])
     console.log(productData)
     console.log(category)
     console.log(subCategory)
     console.log(subOptions)
     // const filteredProduct=productData.filter((product)=>{
-    //     return Object.entries(filters).every(([key,values])=>{
-    //         if(values.length===0) return true
-    //          const productKeyForFilter={
-    //                gender:'gender',
-    //                brand:"brandName",
-    //                color:"color",
-    //                fabric:"fabric"
-    //          }
-    //          const productKey=product[productKeyForFilter[key]]
-    //          return values.includes(productKey)
-    //     })&&
-    //     product.productCategory.toLowerCase()===category?.toLowerCase()&&
-    //     (!subCategory||product.productRightCategory.toLowerCase()===subCategory?.toLowerCase())&&
-    //     (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
+    //       return (
+    //         Object.entries(filters).every(([key,values])=>{
+    //             if (Array.isArray(values) && values.length === 0) return true;
+    //             if (key==="priceMin"||key==="priceMax") return true
+    //             const productKeyForFilter={
+    //                 gender:"gender",
+    //                 brand:"brandName",
+    //                 color:"color",
+    //                 fabric:"fabric"
+    //             }
+    //             const productKey=product[productKeyForFilter[key]]
+    //             return Array.isArray(values)?values.includes(productKey):true
+    //         })&&
+    //          product.productPrice>=filters.priceMin&&
+    //          product.productPrice<=filters.priceMax&&
+    //         product.productCategory.toLowerCase() === category?.toLowerCase() &&
+    //         (!subCategory ||
+    //         product.productRightCategory.toLowerCase() === subCategory?.toLowerCase()) &&
+    //         (!subOptions ||
+    //         subOptions.toLowerCase() === "all" ||
+    //         product.productLeftCategory.toLowerCase() === subOptions?.toLowerCase())
+    //         )
     // })
-    const filteredProduct=productData.filter((product)=>{
+     const filteredProduct=productData.filter((product)=>{
           return (
             Object.entries(filters).every(([key,values])=>{
                 if (Array.isArray(values) && values.length === 0) return true;
@@ -66,25 +70,53 @@ export const ProductMain = ({filters}) => {
             product.productLeftCategory.toLowerCase() === subOptions?.toLowerCase())
             )
     })
-    const sortProducts=[...filteredProduct].sort((a,b)=>{
-        switch(sortType){
-            case "popularity":
-                return b.popularity-a.popularity
-            case "lowTohigh":
-                return a.productPrice-b.productPrice
-            case "highTolow":
-                return b.productPrice-a.productPrice
-            case "newest":
-                return new Date(b.createdAt)-new Date(a.createdAt)
-            default:
-                return 0
-        }
+    // const sortProducts=[...filteredProduct].sort((a,b)=>{
+    //     switch(sortType){
+    //         case "popularity":
+    //             return b.popularity-a.popularity
+    //         case "lowTohigh":
+    //             return a.productPrice-b.productPrice
+    //         case "highTolow":
+    //             return b.productPrice-a.productPrice
+    //         case "newest":
+    //             return new Date(b.createdAt)-new Date(a.createdAt)
+    //         default:
+    //             return 0
+    //     }
+    // })
+    const sortProducts = useMemo(() => {
+    return [...filteredProduct].sort((a, b) => {
+      switch (sortType) {
+        case 'popularity':
+          return b.popularity - a.popularity
+        case 'lowTohigh':
+          return a.productPrice - b.productPrice
+        case 'highTolow':
+          return b.productPrice - a.productPrice
+        case 'newest':
+          return new Date(b.createdAt) - new Date(a.createdAt)
+        default:
+          return 0
+      }
     })
+  }, [filteredProduct, sortType])
     const totolproduct=sortProducts.length
   return (
     isMobile?(
         <>
-           <ProductPageHeaderSScreen/>
+          <div style={{position:"relative",opacity:filterToggle?'0':"1",pointerEvents:filterToggle?'none':'all'}}>
+            <ProductPageHeaderSScreen 
+            filterToggle={filterToggle}
+            setFilterToggle={setFilterToggle}
+            sortToggle={sortToggle}
+            setSortToggle={setSortToggle}
+           />
+          </div>
+            {
+              filterToggle&&(
+                  <FullScreenNav/>
+              )
+            }
         </>
     ):(
        <div>
@@ -134,6 +166,7 @@ export const ProductMain = ({filters}) => {
 }
 
 
+
 //    const filteredProduct=productData.filter((product)=>{
 //         return(
 //             product.productCategory.toLowerCase()===category?.toLowerCase()&&
@@ -141,13 +174,6 @@ export const ProductMain = ({filters}) => {
 //             (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
 //         )
 //     })
-
-
-
-
-
-
-
 
 
 
@@ -223,3 +249,26 @@ export const ProductMain = ({filters}) => {
 //       product.productLeftCategory.toLowerCase() === subOptions?.toLowerCase())
 //   );
 // });
+
+
+
+
+    // const filteredProduct=productData.filter((product)=>{
+    //     return Object.entries(filters).every(([key,values])=>{
+    //         if(values.length===0) return true
+    //          const productKeyForFilter={
+    //                gender:'gender',
+    //                brand:"brandName",
+    //                color:"color",
+    //                fabric:"fabric"
+    //          }
+    //          const productKey=product[productKeyForFilter[key]]
+    //          return values.includes(productKey)
+    //     })&&
+    //     product.productCategory.toLowerCase()===category?.toLowerCase()&&
+    //     (!subCategory||product.productRightCategory.toLowerCase()===subCategory?.toLowerCase())&&
+    //     (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
+    // }
+
+
+

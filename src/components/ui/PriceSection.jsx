@@ -147,4 +147,3 @@ export const PriceSection = ({ filters, setFilters }) => {
     </div>
   )
 }
-

@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../../styles/smallscreenproductpage.css'
-export const ProductPageHeaderSScreen = () => {
+export const ProductPageHeaderSScreen = ({filterToggle,setFilterToggle}) => {
+    const[readMore,setReadmore]=useState(false)
+
+    const handleReadMore=()=>{
+        setReadmore((prev)=>!prev)
+    }
+    const handleFilterToggle=()=>setFilterToggle((prev)=>!prev)
+    console.log(readMore)
+    console.log(filterToggle)
   return (
     <div>
         <div className='s-pro-pageheader-wrap'>
@@ -30,7 +38,7 @@ export const ProductPageHeaderSScreen = () => {
                 <div className='sort-txt'>Sort</div>
              </div>
              <div style={{height:"16px",width:"1px",background:"rgba(213,215,219,1.00)"}}></div>
-             <div className='sortBtn-wrap'>
+             <div className='sortBtn-wrap' onClick={handleFilterToggle}>
                 <div className='filtercount'>
                    <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M148 172H40M216 172h-28"></path><circle cx="168" cy="172" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="M84 84H40M216 84h-92"></path><circle cx="104" cy="84" r="20" fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></circle></svg> 
                    <div>1</div>
@@ -66,11 +74,11 @@ export const ProductPageHeaderSScreen = () => {
                 </div>
             </div>
         </div>
-        <div className='textt-wrap'>
-            <div className='large-words'>
+        <div className={`textt-wrap ${readMore&&"white-spaceChange"}`}>
+            <div className={`large-words ${readMore&&"white-spaceChange"}`}>
                 <p>If you want to stay on top of the fashion trends, then you need to shop for the latest and trendiest <b>topwear</b>  from an e-commerce site Flipkart. Check out the amazing collection of topwear for women online and select the ones that suit you the best. Browse through stylish women’s topwear that are offered by popular brands, such as Only, Jockey, U&F, Darzi, Ann Springs, and more. Women can style a trendy </p>
             </div>
-            <div className='nilla-readmore'>Read more</div>
+            <div className='nilla-readmore' onClick={handleReadMore}>{readMore?"See less":"Read More"}</div>
         </div>
         <div className='borderline'></div>
     </div>

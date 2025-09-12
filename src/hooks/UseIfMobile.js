@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 export const UseIfMobile = () => {
       const [isMobile,setIsMobile]=useState(window.innerWidth<768)
+      console.log(isMobile)
       useEffect(()=>{
         const handleChange=()=>{
             setIsMobile(window.innerWidth<768)
@@ -10,3 +11,4 @@ export const UseIfMobile = () => {
       },[])
       return isMobile
 }
+
