@@ -22,68 +22,33 @@ export const ProductMain = ({filters,setFilters,productData}) => {
     console.log(category)
     console.log(subCategory)
     console.log(subOptions)
-    // const filteredProduct=productData.filter((product)=>{
-    //       return (
-    //         Object.entries(filters).every(([key,values])=>{
-    //             if (Array.isArray(values) && values.length === 0) return true;
-    //             if (key==="priceMin"||key==="priceMax") return true
-    //             const productKeyForFilter={
-    //                 gender:"gender",
-    //                 brand:"brandName",
-    //                 color:"color",
-    //                 fabric:"fabric"
-    //             }
-    //             const productKey=product[productKeyForFilter[key]]
-    //             return Array.isArray(values)?values.includes(productKey):true
-    //         })&&
-    //          product.productPrice>=filters.priceMin&&
-    //          product.productPrice<=filters.priceMax&&
-    //         product.productCategory.toLowerCase() === category?.toLowerCase() &&
-    //         (!subCategory ||
-    //         product.productRightCategory.toLowerCase() === subCategory?.toLowerCase()) &&
-    //         (!subOptions ||
-    //         subOptions.toLowerCase() === "all" ||
-    //         product.productLeftCategory.toLowerCase() === subOptions?.toLowerCase())
-    //         )
-    // })
-     const filteredProduct=productData.filter((product)=>{
-          return (
-            Object.entries(filters).every(([key,values])=>{
-                if (Array.isArray(values) && values.length === 0) return true;
-                if (key==="priceMin"||key==="priceMax") return true
-                const productKeyForFilter={
-                    gender:"gender",
-                    brand:"brandName",
-                    color:"color",
-                    fabric:"fabric"
-                }
-                const productKey=product[productKeyForFilter[key]]
-                return Array.isArray(values)?values.includes(productKey):true
-            })&&
-             product.productPrice>=filters.priceMin&&
-             product.productPrice<=filters.priceMax&&
-            product.productCategory.toLowerCase() === category?.toLowerCase() &&
-            (!subCategory ||
-            product.productRightCategory.toLowerCase() === subCategory?.toLowerCase()) &&
-            (!subOptions ||
-            subOptions.toLowerCase() === "all" ||
-            product.productLeftCategory.toLowerCase() === subOptions?.toLowerCase())
-            )
+
+    const filteredProduct = useMemo(() => {
+    return productData.filter((product) => {
+      return (
+        Object.entries(filters).every(([key, values]) => {
+          if (Array.isArray(values) && values.length === 0) return true
+          if (key === 'priceMin' || key === 'priceMax') return true
+
+          const productKeyForFilter = {
+            gender: 'gender',
+            brand: 'brandName',
+            color: 'color',
+            fabric: 'fabric',
+          }
+
+          const productKey = product[productKeyForFilter[key]]
+          return Array.isArray(values) ? values.includes(productKey) : true
+        }) &&
+        product.productPrice >= filters.priceMin &&
+        product.productPrice <= filters.priceMax &&
+        product.productCategory.toLowerCase() === category?.toLowerCase() &&
+        (!subCategory || product.productRightCategory.toLowerCase() === subCategory?.toLowerCase()) &&
+        (!subOptions || subOptions.toLowerCase() === 'all' || product.productLeftCategory.toLowerCase() === subOptions?.toLowerCase())
+      )
     })
-    // const sortProducts=[...filteredProduct].sort((a,b)=>{
-    //     switch(sortType){
-    //         case "popularity":
-    //             return b.popularity-a.popularity
-    //         case "lowTohigh":
-    //             return a.productPrice-b.productPrice
-    //         case "highTolow":
-    //             return b.productPrice-a.productPrice
-    //         case "newest":
-    //             return new Date(b.createdAt)-new Date(a.createdAt)
-    //         default:
-    //             return 0
-    //     }
-    // })
+  }, [productData, filters, category, subCategory, subOptions])
+
     const sortProducts = useMemo(() => {
     return [...filteredProduct].sort((a, b) => {
       switch (sortType) {
@@ -104,7 +69,12 @@ export const ProductMain = ({filters,setFilters,productData}) => {
   return (
     isMobile?(
         <>
-          <div style={{position:"relative",opacity:filterToggle?'0':"1",pointerEvents:filterToggle?'none':'all'}}>
+        {
+        filterToggle?(
+         <FullScreenNav/>
+        ):
+        (
+          <div style={{position:"relative"}}>
             <ProductPageHeaderSScreen 
             filterToggle={filterToggle}
             setFilterToggle={setFilterToggle}
@@ -112,11 +82,8 @@ export const ProductMain = ({filters,setFilters,productData}) => {
             setSortToggle={setSortToggle}
            />
           </div>
-            {
-              filterToggle&&(
-                  <FullScreenNav/>
-              )
-            }
+        )
+      }
         </>
     ):(
        <div>
@@ -272,3 +239,43 @@ export const ProductMain = ({filters,setFilters,productData}) => {
 
 
 
+    // const sortProducts=[...filteredProduct].sort((a,b)=>{
+    //     switch(sortType){
+    //         case "popularity":
+    //             return b.popularity-a.popularity
+    //         case "lowTohigh":
+    //             return a.productPrice-b.productPrice
+    //         case "highTolow":
+    //             return b.productPrice-a.productPrice
+    //         case "newest":
+    //             return new Date(b.createdAt)-new Date(a.createdAt)
+    //         default:
+    //             return 0
+    //     }
+    // })
+
+
+      // const filteredProduct=productData.filter((product)=>{
+    //       return (
+    //         Object.entries(filters).every(([key,values])=>{
+    //             if (Array.isArray(values) && values.length === 0) return true;
+    //             if (key==="priceMin"||key==="priceMax") return true
+    //             const productKeyForFilter={
+    //                 gender:"gender",
+    //                 brand:"brandName",
+    //                 color:"color",
+    //                 fabric:"fabric"
+    //             }
+    //             const productKey=product[productKeyForFilter[key]]
+    //             return Array.isArray(values)?values.includes(productKey):true
+    //         })&&
+    //          product.productPrice>=filters.priceMin&&
+    //          product.productPrice<=filters.priceMax&&
+    //         product.productCategory.toLowerCase() === category?.toLowerCase() &&
+    //         (!subCategory ||
+    //         product.productRightCategory.toLowerCase() === subCategory?.toLowerCase()) &&
+    //         (!subOptions ||
+    //         subOptions.toLowerCase() === "all" ||
+    //         product.productLeftCategory.toLowerCase() === subOptions?.toLowerCase())
+    //         )
+    // })

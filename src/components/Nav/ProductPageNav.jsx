@@ -568,7 +568,7 @@ electronics:[
   ]
 }
 const category=["Electronics","TVs & Appliances","Men","Women","Baby & Kids","Home & Furniture","Sports,Books & More"]
-export const ProductPageNav = () => {
+ const ProductPageNav = () => {
   const [hoveredIndex,setHoverIndex]=useState(null)
   console.log(hoveredIndex)
   return (
@@ -631,3 +631,4 @@ export const ProductPageNav = () => {
     </div>
   )
 }
+export default React.memo(ProductPageNav)

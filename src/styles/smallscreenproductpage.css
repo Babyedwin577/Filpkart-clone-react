@@ -3,10 +3,7 @@
     pointer-events: all;
     position: relative;
 }
-.hidecurrent{
-    pointer-events: none;
-    opacity: 0;
-}
+
 .s-pro-pageheader-wrap{
     width: 100%;
     height: 52px;

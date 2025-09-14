@@ -1,53 +1,17 @@
-import React,{useState} from 'react'
+import React from 'react'
 import filterOptions from '../../config/FilterConfig'
 import { PriceSection } from '../ui/PriceSection'
+import {useFilters} from '../../hooks/UseFilter'
 import '../../styles/sidenav.css'
 
 export const ProductSideNav = ({filters,setFilters}) => {
-const [expandedCategories,setExpandedCategories]=useState({})
-const toggleCategory=(key)=>{
-  setExpandedCategories((prev)=>({
-    ...prev,
-    [key]:!prev[key]
-  }))
-}
-const handleChange=(key,option)=>{
-  console.log("clicked")
-    setFilters((prev)=>{
-      const activeAlready=prev[key].includes(option)
-      return {
-        ...prev,
-        [key]:activeAlready?
-        prev[key].filter((item)=>item!==option):
-        [...prev[key],option]
-      }
-    }
-    )
-}
-  const clearAll = () => {
-    const cleared = Object.keys(filters).reduce((acc, key) => {
-      if(key==='priceMin'){
-        acc[key]=0
-      }
-      else if(key==='priceMax'){
-        acc[key]=Infinity
-      }
-      else {
-        acc[key]=[]
-      }
-      return acc
-    }, {});
-    setFilters(cleared);
-  };
-
-  const removeFilter = (key, value) => {
-    setFilters((prev) => ({
-      ...prev,
-      [key]: prev[key].filter((item) => item !== value),
-    }));
-  };
-console.log(expandedCategories)
-console.log(filters)
+const {
+  expandedCategories,
+  toggleCategory,
+  handleChange,
+  clearAll,
+  removeFilter,
+}=useFilters(filters,setFilters)
   return (
     <div className='sidenav-main'>
         <div className='sidenav-inner'>

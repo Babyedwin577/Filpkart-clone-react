@@ -1,7 +1,7 @@
-import React, { useState , useEffect} from 'react'
+import React, { useState , useEffect, useMemo, useCallback} from 'react'
 import { ProductMain } from '../components/main/productNavigation/ProductMain'
-import { ProductPageHeader } from '../components/header/ProductPageHeader'
-import { ProductPageNav } from '../components/Nav/ProductPageNav'
+import  ProductPageHeader  from '../components/header/ProductPageHeader'
+import  ProductPageNav  from '../components/Nav/ProductPageNav'
 import { ProductSideNav } from '../components/Nav/ProductSideNav'
 import { Footer } from '../components/footer/Footer'
 import { UseIfMobile } from '../hooks/UseIfMobile'
@@ -34,12 +34,14 @@ const isMobile=UseIfMobile()
         .then((data)=>setProductData(data))
         .catch((err)=>console.error(`Error Fetching JSON:`,err))
     },[])
+    const filtersMemo =useMemo(()=>filters,[filters])
+    const handleSetFilters = useCallback((newFilters) => setFilters(newFilters), [])
   return (
     isMobile?(
       <>
         <ProductMain
-            filters={filters}
-            setFilters={setFilters}
+            filters={filtersMemo}
+            setFilters={handleSetFilters}
             productData={productData}
         />
       </>
@@ -50,11 +52,11 @@ const isMobile=UseIfMobile()
 
       <div style={{padding:"8px",display:'flex'}}>
         <ProductSideNav 
-         filters={filters}
-         setFilters={setFilters}
+         filters={filtersMemo}
+         setFilters={handleSetFilters}
         />
         <ProductMain
-         filters={filters}
+         filters={filtersMemo}
          productData={productData}
         />
       </div>

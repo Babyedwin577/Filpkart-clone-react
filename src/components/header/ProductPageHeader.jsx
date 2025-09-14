@@ -1,6 +1,6 @@
 import React from 'react'
 import './prodctheader.css'
-export const ProductPageHeader = () => {
+ const ProductPageHeader = () => {
   return (
     <div className='producthead-mainwrapper'>
           <div className='sideboxes'></div>
@@ -46,3 +46,5 @@ export const ProductPageHeader = () => {
     </div>
   )
 }
+
+export default React.memo(ProductPageHeader)
