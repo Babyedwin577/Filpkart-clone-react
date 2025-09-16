@@ -83,3 +83,10 @@
 .no{
     margin-left: 8px;
 }
+.product-card-sswrapper{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 164px 16px 0px 16px;
+    width: 100%;
+    column-gap: 12px;
+}

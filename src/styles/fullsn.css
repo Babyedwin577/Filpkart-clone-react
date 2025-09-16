@@ -1,0 +1,137 @@
+.full-sn-head{
+    height: 52px;
+    background-color: #fff;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+.sn-backbtn{
+    height: 100%;
+    width: 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sn-head-wrap{
+    padding-left: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.sn-head-wrap h1{
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'regular';
+    color: #212121;
+    line-height: 19px;
+    margin: 0;
+    padding: 0;
+    flex: 1;
+}
+.sn-filterMenu-wrapper{
+    display: flex;;
+}
+.sn-filterMenu-leftSection{
+    width: 33.332%;
+    background-color:rgb(241, 243, 246);
+    position: fixed;
+    top: 52px;
+    overflow-y: scroll;
+    padding-bottom: 56px;
+}
+.sn-filterMenu-leftItems{
+    height: 56px;
+    background-color: transparent;
+}
+.sn-filterMenu-leftItems-head{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'regular';
+    color: rgba(0,0,0,1.00);
+    line-height: 16px;
+    text-align: left;
+    line-height: 20px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 12px 8px 12px 16px;
+    max-width: 145px;
+}
+.active-leftitem-sn{
+    color: rgba(40,116,240,1.00);
+    background-color: #fff;
+}
+.sn-filterMenu-rightSection{
+    flex: 1;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    left: 33.332%;
+    top: 52px;
+    height: 100%;
+}
+.opt-sn-wrap{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 12px 19px 12px 19px;
+}
+.opt-sn-input{
+  position: absolute;
+  opacity: 0; 
+  cursor: pointer;
+  width: 18px;  
+  height: 18px;
+  margin: 0;
+  z-index: 2; 
+}
+.ticked-box{
+    background: url('https://static-assets-web.flixcart.com/www/linchpin/batman-returns/cross-platform-images/images/unchecked-58d79d4f.png');
+    width: 18px;
+    height: 18px;
+}
+
+.sn-head-wrap button{ 
+ color: rgb(0, 0, 0);
+ font-size: 12px;
+ font-family: 'semibold';
+ line-height: 12px;
+ background: none;
+ border: none;
+}
+.count-ss-total{
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'semibold';
+    color: rgba(0,0,0,1.00);
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.caption-ss{
+    font-size: 12px;
+    color: rgba(135,135,135,1.00);
+    max-width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-family: 'regular';
+    white-space: nowrap;
+}
+.applybtn-wrap{
+    background: rgb(255, 88, 0);
+    min-height: 40px;
+    padding: 0 65px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.applybtn-wrap div{
+    color: rgb(255, 255, 255);
+    font-family: 'semibold';
+    font-size: 14px;
+}

@@ -1,0 +1,208 @@
+.product-card-ss{
+    flex: 1 1 44.99%;
+    max-width: calc(50% - 6px);
+    /* width: 48.99%; */
+    height: 100%;
+    width: 100%;
+    padding-bottom: 8px;
+}
+.ss-image-wrapp img{
+    filter: none;
+    opacity: 1;
+    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    object-fit: contain;
+}
+.ss-product-card-inner{
+    width: 100%;
+    height: 100%;
+}
+.ss-image-wrapp{
+    padding-top: 132%;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #f7f7f7;
+    border-radius: 12px;
+}
+.ss-image-wrapp-additional{
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: none !important;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ss-image-wrapp-additional img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    transition: opacity .5s linear;
+    opacity: 1;
+    margin: auto;
+    object-fit: contain;
+}
+.wishList-Pluswrap{
+    background-color: rgba(255, 255, 255, 1.00);
+    opacity: 0.88;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-color: rgba(255, 255, 255, 1.00);
+    border-right-color: rgba(255, 255, 255, 1.00);
+    border-bottom-color: rgba(255, 255, 255, 1.00);
+    border-left-color: rgba(255, 255, 255, 1.00);
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    width: 28px;
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.wishList-Plusinner{
+    position: relative;
+    height: 20px;
+    width: 20px;
+}
+.wishList-Plusinner img{
+    filter: none;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    object-fit: contain;
+}
+.ad-wrapper-ss{
+    position: absolute;
+    top: 4px;
+    text-align: center;
+    padding-top: 2.5px;
+    border-radius: 4px;
+    margin-left: 6px;
+    background-color: rgba(240, 242, 245, 1.00);
+    padding-bottom: 1.5px;
+    letter-spacing: 0.5px;
+    left: 0;
+    margin-top: 2px;
+    z-index: 2;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: rgba(113,116,120,1.00);
+    font-family: 'bold';
+    font-size: 10px;
+}
+.rating-box{
+    height: 38px;
+    z-index: 1;
+    padding: 6px;
+    position: absolute;
+    left: 0;
+    bottom:0;
+}
+.rating-box-inner{
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.88;
+    padding: 2px;
+     align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+.realRateing{
+    color: rgb(0, 0, 0);
+    padding: 2px;
+    font-size: 10px;
+    line-height: 16px;
+    font-family:'semibold';
+    letter-spacing: 0.01px;
+}
+.rating-box img{
+ width: 12px;
+ height: 12px;
+}
+.totalRate{
+    color: rgb(96, 98, 101);
+    margin: 3px;
+    padding-left: 2.5px;
+    font-size: 10px;
+    line-height: 16px;
+    font-family:'regular';
+    letter-spacing: 0.01px;
+    border-left: 0.5px solid rgb(96, 98, 101);
+}
+.details-wrap-ss{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding-top: 10px;
+}
+.brandName-ss-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.brandName-ss-wrap img{
+    height: 17.5px;
+    width: 45px;
+    margin-right: 6px;
+}
+.brandName-ss{
+    font-size: 14px;
+    color: rgba(33, 33, 33, 1.00);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    font-family: 'bold';
+    flex-grow: 1;
+}
+.productName-ss{
+    overflow: hidden;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    white-space: nowrap;
+    line-height: 12px;
+    color: rgba(135,135,135,1.00);
+    padding: 4px 0 2px 0;
+    margin-right: 6px;
+}
+.alter-price-wrap{
+    padding: 0;
+    padding-top: 4px;
+    display: flex;
+}
+.alter-dis-price{
+    font-family: 'semibold';
+    font-size: 14px;
+    margin-left: 4px;
+}
+.offer-wrapss{
+    display: flex;
+    align-items: center;
+}
+.special-nott-alter{
+    display: flex;
+}

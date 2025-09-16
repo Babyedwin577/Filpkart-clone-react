@@ -5,6 +5,7 @@ import { Explantion } from '../../ui/Explantion'
 import {UseIfMobile} from '../../../hooks/UseIfMobile'
 import { ProductPageHeaderSScreen } from '../../header/ProductPageHeaderSScreen'
 import { FullScreenNav } from '../../Nav/FullScreenNav'
+import { ProductCardSmallerScreen } from '../../ui/ProductCardSmallerScreen'
 import './productMain.css'
 export const ProductMain = ({filters,setFilters,productData}) => {
     const [sortType,setSortType]=useState('popularity')
@@ -16,12 +17,12 @@ export const ProductMain = ({filters,setFilters,productData}) => {
     const filteredurl=pathname.split("/").filter(Boolean)
     const decordurl=filteredurl.map((p)=>decodeURIComponent(p))
     const secondpart=decordurl[1]
-    console.log(secondpart)
-    console.log(isMobile)
-    console.log(productData)
-    console.log(category)
-    console.log(subCategory)
-    console.log(subOptions)
+    // console.log(secondpart)
+    // console.log(isMobile)
+    // console.log(productData)
+    // console.log(category)
+    // console.log(subCategory)
+    // console.log(subOptions)
 
     const filteredProduct = useMemo(() => {
     return productData.filter((product) => {
@@ -71,16 +72,32 @@ export const ProductMain = ({filters,setFilters,productData}) => {
         <>
         {
         filterToggle?(
-         <FullScreenNav/>
+         <FullScreenNav
+          filters={filters}
+          setFilters={setFilters}
+          setFilterToggle={setFilterToggle}
+         />
         ):
         (
           <div style={{position:"relative"}}>
+            <div>
             <ProductPageHeaderSScreen 
             filterToggle={filterToggle}
             setFilterToggle={setFilterToggle}
             sortToggle={sortToggle}
             setSortToggle={setSortToggle}
            />
+           <div className='product-card-sswrapper'>
+              {
+                sortProducts.map((item,index)=>(
+                    <ProductCardSmallerScreen 
+                       key={index} 
+                       item={item}
+                    />
+                ))
+              }
+            </div>
+            </div>
           </div>
         )
       }
@@ -169,13 +186,6 @@ export const ProductMain = ({filters,setFilters,productData}) => {
 //     product.productPrice <= filters.priceMax
 //   );
 // });
-
-
-
-
-
-
-
 
 
 

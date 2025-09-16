@@ -1,9 +1,23 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../../styles/smallscreenproductpage.css'
 export const ProductPageHeaderSScreen = ({filterToggle,setFilterToggle}) => {
     const[readMore,setReadmore]=useState(false)
+    const filterDiv=useRef(null)
+    useEffect(() => {
+  const bar = filterDiv.current;
 
+  const handleScroll = () => {
+    if (window.scrollY > 52) {
+      bar.style.transform = "translateY(0px)";
+    } else {
+      bar.style.transform = `translateY(${52 - window.scrollY}px)`;
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
     const handleReadMore=()=>{
         setReadmore((prev)=>!prev)
     }
@@ -32,7 +46,7 @@ export const ProductPageHeaderSScreen = ({filterToggle,setFilterToggle}) => {
             <span>Login</span>
             </Link>
         </div> 
-        <div className='filter-sort-wrap'>
+        <div className='filter-sort-wrap' ref={filterDiv}>
              <div className='sortBtn-wrap'>
                 <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="m144 168 40 40 40-40M184 112v96M48 128h72M48 64h136M48 192h56"></path></svg>
                 <div className='sort-txt'>Sort</div>
@@ -74,13 +88,15 @@ export const ProductPageHeaderSScreen = ({filterToggle,setFilterToggle}) => {
                 </div>
             </div>
         </div>
+        <div style={{position:"absolute",top:"156px",width:"100%"}}>
         <div className={`textt-wrap ${readMore&&"white-spaceChange"}`}>
             <div className={`large-words ${readMore&&"white-spaceChange"}`}>
                 <p>If you want to stay on top of the fashion trends, then you need to shop for the latest and trendiest <b>topwear</b>  from an e-commerce site Flipkart. Check out the amazing collection of topwear for women online and select the ones that suit you the best. Browse through stylish women’s topwear that are offered by popular brands, such as Only, Jockey, U&F, Darzi, Ann Springs, and more. Women can style a trendy </p>
             </div>
             <div className='nilla-readmore' onClick={handleReadMore}>{readMore?"See less":"Read More"}</div>
         </div>
-        <div className='borderline'></div>
+                <div className='borderline'></div>
+        </div>
     </div>
   )
 }

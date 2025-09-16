@@ -76,7 +76,7 @@ const {
                       <div className='expandedside-wrap'>
                         {
                           item.options.map((data,index)=>(
-                            <label htmlFor="" className='label-expandable' key={index}>
+                          <label htmlFor="" className='label-expandable' key={index}>
                           <input
                            type="checkbox"
                            onChange={()=>handleChange(item.key,data)}
