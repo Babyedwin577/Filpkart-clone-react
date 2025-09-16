@@ -6,6 +6,7 @@ import {UseIfMobile} from '../../../hooks/UseIfMobile'
 import { ProductPageHeaderSScreen } from '../../header/ProductPageHeaderSScreen'
 import { FullScreenNav } from '../../Nav/FullScreenNav'
 import { ProductCardSmallerScreen } from '../../ui/ProductCardSmallerScreen'
+import { SortOptionsSS } from '../../ui/SortOptionsSS'
 import './productMain.css'
 export const ProductMain = ({filters,setFilters,productData}) => {
     const [sortType,setSortType]=useState('popularity')
@@ -67,19 +68,21 @@ export const ProductMain = ({filters,setFilters,productData}) => {
     })
   }, [filteredProduct, sortType])
     const totolproduct=sortProducts.length
+    console.log(sortToggle)
   return (
     isMobile?(
-        <>
+        <div style={{position:"relative"}}> 
         {
         filterToggle?(
          <FullScreenNav
           filters={filters}
           setFilters={setFilters}
           setFilterToggle={setFilterToggle}
+          setSortToggle={setSortToggle}
          />
         ):
         (
-          <div style={{position:"relative"}}>
+          <div className={`op-without ${sortToggle===true?"opacity-changer":""}`}>
             <div>
             <ProductPageHeaderSScreen 
             filterToggle={filterToggle}
@@ -100,8 +103,15 @@ export const ProductMain = ({filters,setFilters,productData}) => {
             </div>
           </div>
         )
-      }
-        </>
+      } 
+        <div className={`sort-popup ${sortToggle ? "open" : ""}`}>
+          <SortOptionsSS
+           setSortType={setSortType}
+           sortType={sortType}
+           setSortToggle={setSortToggle}
+          />
+        </div>
+      </div>
     ):(
        <div>
      <div style={{background:"#fff", width:"100%", minWidth:"682px"}}>
@@ -149,8 +159,6 @@ export const ProductMain = ({filters,setFilters,productData}) => {
   )
 }
 
-
-
 //    const filteredProduct=productData.filter((product)=>{
 //         return(
 //             product.productCategory.toLowerCase()===category?.toLowerCase()&&
@@ -158,10 +166,6 @@ export const ProductMain = ({filters,setFilters,productData}) => {
 //             (!subOptions||subOptions.toLowerCase()==='all'||product.productLeftCategory.toLowerCase()===subOptions?.toLowerCase())
 //         )
 //     })
-
-
-
-
 
 // const filteredProduct = productData.filter((product) => {
 //   return (

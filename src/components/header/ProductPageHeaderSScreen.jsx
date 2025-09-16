@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../../styles/smallscreenproductpage.css'
-export const ProductPageHeaderSScreen = ({filterToggle,setFilterToggle}) => {
+export const ProductPageHeaderSScreen = ({filterToggle,setFilterToggle,setSortToggle}) => {
     const[readMore,setReadmore]=useState(false)
     const filterDiv=useRef(null)
     useEffect(() => {
@@ -24,6 +24,7 @@ export const ProductPageHeaderSScreen = ({filterToggle,setFilterToggle}) => {
     const handleFilterToggle=()=>setFilterToggle((prev)=>!prev)
     console.log(readMore)
     console.log(filterToggle)
+    const handleSortToggle=()=>setSortToggle((prev)=>!prev)
   return (
     <div>
         <div className='s-pro-pageheader-wrap'>
@@ -47,7 +48,7 @@ export const ProductPageHeaderSScreen = ({filterToggle,setFilterToggle}) => {
             </Link>
         </div> 
         <div className='filter-sort-wrap' ref={filterDiv}>
-             <div className='sortBtn-wrap'>
+             <div className='sortBtn-wrap' onClick={handleSortToggle}>
                 <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" stroke-linecap="round" stroke-linejoin="round" stroke-width="12" d="m144 168 40 40 40-40M184 112v96M48 128h72M48 64h136M48 192h56"></path></svg>
                 <div className='sort-txt'>Sort</div>
              </div>
