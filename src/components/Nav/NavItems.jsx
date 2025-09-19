@@ -38,12 +38,3 @@ export const NavItems = ({index,item,hasDropDown,dropdownData}) => {
     </div>
   )
 }
-
-
-
-
-
-
-
-
-

@@ -4,24 +4,31 @@
        "productRightCategory":"Men's Top Wears",
        "productLeftCategory":"Men's T-shirts",
        "brandName":"U.S POLO ASSN.",
-       "productName":"Men Printed Round Neck Cotton Blend Grey T-Shirt",
-       "productImage":"https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/s/y/g/m-f-popcorn-white-black-vrlooks-original-imahahf8ftzvr3mk.jpeg?q=70",
-       "productPrice":340,
-       "productRealPrice":999,
-       "sizeDetails":"S,M,L",
+       "productName":"U.S. POLO ASSN. Men Solid Casual White Shirt",
+       "productImage":"https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/l/u/x/-original-imah4y8pggnjgpcx.jpeg?q=70",
+       "productPrice":2299,
+       "productRealPrice":2599,
+       "sizeDetails":"S,M,L,XL,XXL",
        "popularity":100,
        "createdAt":"2025-08-30T10:00:00Z",
        "gender":"Men",
        "color":"Black",
        "fabric":"Pure Cotton",
-       "starAvg":"2.5",
+       "starAvg":"5",
        "totalRating":"22k",
        "pack":true,
        "sponsored":true,
        "specialNotation":true,
        "assured":true,
        "ad":true,
-       "specialNotationDes":"Lowest price since Launch"
+       "specialNotationDes":"Lowest price since Launch",
+       "productPhotoes":[
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/l/z/l/-original-imah4y8pxms3crez.jpeg?q=70&crop=false",
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/w/q/c/-original-imah4y8pesebgdvs.jpeg?q=70&crop=false",
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/o/a/a/-original-imah4y8pjgtqyyjq.jpeg?q=70&crop=false",
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/d/j/4/-original-imah4y8pm7qakkk4.jpeg?q=70&crop=false",
+        "https://rukminim2.flixcart.com/image/832/832/xif0q/shirt/z/s/z/-original-imah4y8pcnk3zpnq.jpeg?q=70&crop=false"
+       ]
     },
     {
        "productCategory":"Fashion",
@@ -150,7 +157,6 @@
        "specialNotation":true,
        "specialNotationDes":"Big Billion Days Price",
        "sizeDetails":"S,M,L"
-
     },{
        "productCategory":"Fashion",
        "productRightCategory":"Men's Top Wears",
@@ -170,7 +176,6 @@
        "specialNotation":true,
        "specialNotationDes":"Big Billion Days Price",
        "sizeDetails":"S,M,L"
-
     },{
        "productCategory":"Fashion",
        "productRightCategory":"Men's Top Wears",
@@ -212,7 +217,6 @@
        "specialNotation":true,
        "specialNotationDes":"Hot Deal",
        "sizeDetails":"S,M,L,XL"
-
     },{
        "productCategory":"Fashion",
        "productRightCategory":"Men's Top Wears",
@@ -235,7 +239,6 @@
        "specialNotationDes":"Lowest price in the year",
        "sizeDetails":"S,M,L,XL",
        "bestseller":"Bestseller"
-
     },{
        "productCategory":"Fashion",
        "productRightCategory":"Men's Top Wears",
@@ -245,7 +248,7 @@
        "productImage":"https://rukminim2.flixcart.com/image/612/612/xif0q/shirt/7/v/f/m-shirtsolreg-01-white-urbano-fashion-original-imah92ykpyuphw4u.jpeg?q=70",
        "productPrice":651,
        "productRealPrice":1599,
-       "popularity":900,
+       "popularity":90,
        "createdAt":"2025-08-30T07:13:00Z",
        "gender":"Men",
        "starAvg":"2.5",
@@ -258,7 +261,6 @@
        "specialNotationDes":"Buy 2 items,save extra 5%",
        "sizeDetails":"S,M,L,XL",
        "bestseller":"Bestseller"
-
     },{
        "productCategory":"Fashion",
        "productRightCategory":"Men's Top Wears",
@@ -320,7 +322,6 @@
        "specialNotation":true,
        "specialNotationDes":"Only few Left",
        "sizeDetails":"XL,S,M,L,XL,XXL"
-
     },{
        "productCategory":"Fashion",
        "productRightCategory":"Men's Top Wears",

@@ -3,7 +3,7 @@ import '../../styles/productcardlarge.css'
 export const ProductCardLargeScreen = ({item}) => {
     const discountPercent = Math.round(((item.productRealPrice - item.productPrice) / item.productRealPrice) * 100);
   return (
-    <div style={{width:"25%"}}>
+    <div>
         <div className='pt-item-wrap'>
             <div className='pt-image'>
                 <div style={{paddingTop:"120%",position:"relative",width:"100%"}}>
@@ -76,6 +76,3 @@ export const ProductCardLargeScreen = ({item}) => {
     </div>
   )
 }
-
-
-

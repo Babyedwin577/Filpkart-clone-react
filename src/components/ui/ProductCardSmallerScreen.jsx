@@ -3,7 +3,7 @@ import '../../styles/productcardsmallsc.css'
 export const ProductCardSmallerScreen = ({item}) => {
       const discountPercent = Math.round(((item.productRealPrice - item.productPrice) / item.productRealPrice) * 100);
   return (
-    <div className='product-card-ss'>
+    <div className=''>
         <div className='ss-product-card-inner'>
           <div className='ss-image-wrapp'>
              <div className='ss-image-wrapp-additional'>
@@ -70,3 +70,11 @@ export const ProductCardSmallerScreen = ({item}) => {
     </div>
   )
 }
+
+
+
+
+
+
+
+

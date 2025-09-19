@@ -571,6 +571,7 @@ const category=["Electronics","TVs & Appliances","Men","Women","Baby & Kids","Ho
  const ProductPageNav = () => {
   const [hoveredIndex,setHoverIndex]=useState(null)
   console.log(hoveredIndex)
+  console.log("product page Nav Rendered")
   return (
     <div className='productNav-wrap'>
         <div className='productNav-inner'>

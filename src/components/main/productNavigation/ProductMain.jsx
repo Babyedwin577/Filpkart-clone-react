@@ -93,10 +93,17 @@ export const ProductMain = ({filters,setFilters,productData}) => {
            <div className='product-card-sswrapper'>
               {
                 sortProducts.map((item,index)=>(
-                    <ProductCardSmallerScreen 
+                   <Link
+                    to={`/product/${item.productName}`}
+                    state={{product:item}}
+                    style={{textDecoration:"none",width:"25%"}}
+                    className='product-card-ss'
+                   >
+                     <ProductCardSmallerScreen 
                        key={index} 
                        item={item}
                     />
+                   </Link>
                 ))
               }
             </div>
@@ -124,10 +131,16 @@ export const ProductMain = ({filters,setFilters,productData}) => {
         <div className='product-wrapping'>
         {
             sortProducts.slice(0,40).map((item,index)=>(
+              <Link
+              to={`/product/${item.productName}`}
+              state={{product:item}}
+              style={{textDecoration:"none",width:"25%"}}
+              >
                 <ProductCardLargeScreen
                 key={index}
                 item={item}
                 />
+              </Link>
             ))
         }
         </div>

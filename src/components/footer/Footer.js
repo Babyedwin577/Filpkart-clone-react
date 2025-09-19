@@ -1,6 +1,10 @@
 import React from 'react'
 import './footer.css'
+import { useLocation } from 'react-router-dom'
 export const Footer = () => {
+  const loc=useLocation()
+  const chuma=loc.pathname==='/'
+  console.log(chuma)
   return (
     <footer className='footer'>
       <div className='top-story'>
@@ -82,7 +86,7 @@ export const Footer = () => {
              1 Rupee Store  presents new products every day for a nominal price of 1 Rupee only. Terms and conditions apply.
         </div> 
       </div>
-      <div className='background'>
+      <div className={`background ${chuma?"":"change-ft-bg"}`}>
       <div className='header-section'>
           <div className='footer-column'>
           <h1 className='footer-head-2'>ABOUT</h1>
@@ -115,7 +119,7 @@ export const Footer = () => {
           <a className='foot-font' href="Contact Us">Grivance Redressal</a>
           <a className='foot-font' href="Contact Us">ERP Compliance</a>
         </div>
-        <div className='footer-column footer-mar'>
+        <div className='footer-column footer-mar foot-add'>
          <h1 className='footer-head-2 head-size'>Mail us:</h1>
          <div className='footer-column social-mar'>
           <a className=' foot-font foot-size' href="Contact Us">Filpkart Internet Private Limited</a>

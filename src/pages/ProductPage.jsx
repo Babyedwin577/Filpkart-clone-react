@@ -50,7 +50,7 @@ const isMobile=UseIfMobile()
       <ProductPageHeader/>
       <ProductPageNav/>
 
-      <div style={{padding:"8px",display:'flex'}}>
+      <div style={{padding:"8px",display:'flex',maxWidth:"1680px",margin:"0 auto"}}>
         <ProductSideNav 
          filters={filtersMemo}
          setFilters={handleSetFilters}

@@ -26,7 +26,7 @@ export const SortOptionsSS = ({sortType,setSortType,setSortToggle}) => {
           <div className='popularity-head-inner'>Price -- Low to High</div>
           <div className='bullet-wrap'>
             {
-            sortType==="lowToHigh"?(
+            sortType==="lowTohigh"?(
                 <img src="https://rukminim1.flixcart.com/www/32/32/promos/28/04/2022/7c0ab296-0784-44d3-be1b-7aaa4c36d990.png?q=60" height={16} width={16} alt="bullet" />
             ):
             (
