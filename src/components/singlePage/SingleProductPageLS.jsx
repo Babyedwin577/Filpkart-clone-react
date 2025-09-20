@@ -227,3 +227,5 @@ export const SingleProductPageLS = ({product}) => {
   </div>
   )
 }
+
+

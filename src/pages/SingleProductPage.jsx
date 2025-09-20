@@ -2,6 +2,7 @@ import React from 'react'
 import ProductPageHeader from '../components/header/ProductPageHeader'
 import ProductPageNav from '../components/Nav/ProductPageNav'
 import { SingleProductPageLS } from '../components/singlePage/SingleProductPageLS'
+import { SingleProductPageSS } from '../components/singlePage/SingleProductPageSS'
 import { Footer } from '../components/footer/Footer'
 import '../styles/singlepage.css'
 import { useLocation,useParams } from 'react-router-dom'
@@ -15,7 +16,9 @@ export const SingleProductPage = () => {
   return (
     <>
     <div className='mobile-productPage'>
-     
+     <SingleProductPageSS
+      product={product}
+     />
     </div>
     <div className='laptop-productPage'>
       <ProductPageHeader/>
@@ -32,6 +35,8 @@ export const SingleProductPage = () => {
 }
 
 
+
+// background:color:#cfebfeff;
 
 
 
