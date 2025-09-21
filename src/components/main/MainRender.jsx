@@ -71,11 +71,13 @@ export const MainRender = () => {
                 title={"Ganesh charurthi Specials"}
               />
             </div>
-            <div className="section3-wrap">
+            <div className="margin-wrap">
+              <div className="section3-wrap">
                <ProductSection3
               data={"topdeals"}
               title={"Fashion Top Deals"}
             />
+            </div>
             </div>
             </>
          )

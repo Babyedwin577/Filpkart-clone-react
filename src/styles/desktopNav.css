@@ -148,4 +148,8 @@ transform: scale(1) translateY(-3%) rotate(316deg);
     margin-left: 16px;
     margin-right: 16px;
   }
+  .margin-wrap{
+    max-width: 1600px;
+    margin: 0 auto;
+  }
 }

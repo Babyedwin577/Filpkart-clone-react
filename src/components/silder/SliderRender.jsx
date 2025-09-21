@@ -12,9 +12,9 @@ export const SliderRender = () => {
             (<Silder/>)
             :
             (
-              <>
+              <div className="margin-wrap">
               <DesktopSlider/>
-              </>
+              </div>
           )
         }
     </div>

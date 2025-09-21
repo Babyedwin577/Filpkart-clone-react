@@ -9,7 +9,7 @@ export const ProductSection1 = ({objectName, title}) => {
         .then((data) => setProductData(data[objectName]))
     }, [objectName])
   return (
-    <div>
+    <div className='margin-wrap'>
        <div className='des-pro-wrapper'>
         <div className='des-pro-inner'>
             <div className='des-pro-head'>
