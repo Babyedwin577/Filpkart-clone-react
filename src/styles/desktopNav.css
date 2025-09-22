@@ -4,6 +4,8 @@
   justify-content: center;
   margin-bottom: 16px;
   position: relative;
+  margin-left:16px;
+  margin-right: 16px;
 }
 .des-scroll-wrapper{
   background-color: rgba(255,255,255,1.00);
@@ -151,5 +153,14 @@ transform: scale(1) translateY(-3%) rotate(316deg);
   .margin-wrap{
     max-width: 1600px;
     margin: 0 auto;
+  }
+  .des-scroll-img{
+    margin-bottom: 12px;
+  }
+  .des-scroll-font h1{
+     font-family: 'semibold';
+  }
+  .des-scroll-wrapper .des-item-wrap:last-child{
+    padding-left: 24px;
   }
 }

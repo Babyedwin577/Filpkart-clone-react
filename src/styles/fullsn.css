@@ -39,7 +39,7 @@
     position: fixed;
     top: 52px;
     overflow-y: scroll;
-    padding-bottom: 56px;
+    height: 100%;
 }
 .sn-filterMenu-leftItems{
     height: 56px;
@@ -58,7 +58,7 @@
     overflow: hidden;
     white-space: nowrap;
     padding: 12px 8px 12px 16px;
-    max-width: 145px;
+    letter-spacing: -0.500px;
 }
 .active-leftitem-sn{
     color: rgba(40,116,240,1.00);

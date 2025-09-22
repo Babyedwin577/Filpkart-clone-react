@@ -76,7 +76,14 @@
 .des-pro-item-wrap:hover .des-pro-item-inner img {
     transform: scale(1.05);
 }
+.des-pro-item-wrap{
+    width: 216px;
+}
 .des-pro-item-inner{
-     margin: 0;
+     margin: 2px 2px;
+}
+.des-pro-item-inner img {
+    width: 152px;
+    height: 152px;
 }
 }

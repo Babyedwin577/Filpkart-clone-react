@@ -64,7 +64,7 @@
     z-index: 0;
     overflow: scroll;
     scrollbar-width: none;
-    padding-top:12px;
+    padding-top:7px;
     padding-left: 8px;
     padding-bottom: 4px;
 }
@@ -81,8 +81,8 @@
     justify-content: center;
 }
 .minutes-backgound{
-    width: 136.23px;
-    height: 58.13px;
+    width: 141.091px;
+    height: 60.4675px
 }
 .minutes-backgound img{
     width: 100%;
@@ -100,8 +100,8 @@
     white-space: nowrap;
 }
 .product-img{
-    width: 59.81px;
-    height: 59.81px;
+    width: 62.54545454545455px;
+    height: 62.54545454545455px;
 }
 .product-img-wrapper{
     display: flex;

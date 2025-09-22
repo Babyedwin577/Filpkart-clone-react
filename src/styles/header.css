@@ -79,7 +79,7 @@
 .searchInner{
     width: 100%;
     padding: 12px 16px;
-    padding-top: 16px;
+    padding-top: 20px;
 }
 .search-bar{
     border: 1.6px solid #EBEBEB;
@@ -292,5 +292,6 @@
     .des-nav-inner{
     padding: 12px 28px;
     max-width: 1600px;
+    padding-bottom: 13px;
 }
 }
